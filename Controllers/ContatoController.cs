@@ -38,6 +38,13 @@ namespace Trabalho_Back_End.Controllers
             return Ok(contato);
         }
 
+        [HttpGet("ObterTodos")]
+        public IActionResult ObterTodos()
+        {
+            var contatos = _context.Contatos;
+            return Ok(contatos);
+        }
+
         [HttpGet("ObterPorNome")]
         public IActionResult ObterPorNome(string nome){
             var contatos = _context.Contatos.Where(x => x.Nome.Contains(nome));
